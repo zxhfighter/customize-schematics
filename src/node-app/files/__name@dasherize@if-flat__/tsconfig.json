@@ -1,0 +1,30 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "baseUrl": ".",
+        "module": "es2015",
+        "moduleResolution": "node",
+        "target": "es5",
+        "outDir": "dist/esm5",
+        "lib": ["esnext", "dom"],
+        "declaration": true,
+        "inlineSources": true,
+        "sourceMap": true,
+        "experimentalDecorators": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "strictNullChecks": true,
+        "noImplicitAny": true,
+        "noEmitOnError": true,
+        "importHelpers": true,
+        "noEmitHelpers": true,
+        "noImplicitThis": false,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "pretty": true,
+        "strict": true,
+        "downlevelIteration": true
+    },
+    "files": [
+        "src/index.ts"
+    ]
+}

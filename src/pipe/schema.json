@@ -1,0 +1,43 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "id": "SchemanticsForPipe",
+    "title": "Pipe Schema",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "管道名称.",
+            "$default": {
+                "$source": "argv",
+                "index": 0
+            },
+            "x-prompt": "请输入管道名称"
+        },
+        "user": {
+            "type": "string",
+            "description": "用户名.",
+            "default": "<user>"
+        },
+        "path": {
+            "type": "string",
+            "format": "path",
+            "description": "管道创建所在路径.",
+            "visible": false
+        },
+        "project": {
+            "type": "string",
+            "description": "管道当前所处项目.",
+            "$default": {
+                "$source": "projectName"
+            }
+        },
+        "skipImport": {
+            "type": "boolean",
+            "description": "When true, does not import this component into the owning NgModule.",
+            "default": false
+        }
+    },
+    "required": [
+        "name"
+    ]
+}

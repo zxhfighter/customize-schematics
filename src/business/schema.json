@@ -1,0 +1,48 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "id": "SchemanticsForBusiness",
+    "title": "Business Schema",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "业务模块.",
+            "$default": {
+                "$source": "argv",
+                "index": 0
+            },
+            "x-prompt": "请输入业务模块?"
+        },
+        "user": {
+            "type": "string",
+            "description": "用户名.",
+            "default": "<user>"
+        },
+        "path": {
+            "type": "string",
+            "format": "path",
+            "description": "业务模块创建所在路径.",
+            "visible": false
+        },
+        "project": {
+            "type": "string",
+            "description": "业务模块当前所处项目.",
+            "$default": {
+                "$source": "projectName"
+            }
+        },
+        "flat": {
+            "type": "boolean",
+            "description": "When true, creates the new files at the top level of the current project.",
+            "default": false
+        },
+        "skipImport": {
+            "type": "boolean",
+            "description": "When true, does not import this component into the owning NgModule.",
+            "default": false
+        }
+    },
+    "required": [
+        "name"
+    ]
+}

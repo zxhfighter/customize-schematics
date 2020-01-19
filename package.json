@@ -1,0 +1,30 @@
+{
+    "name": "customize-schematics",
+    "version": "0.0.1",
+    "description": "customized ng schematics for quickly generating",
+    "main": "index.js",
+    "scripts": {
+        "build": "gulp build",
+        "publish": "gulp publish"
+    },
+    "schematics": "./collection.json",
+    "author": "zxhfighter",
+    "license": "UNLICENSED",
+    "dependencies": {
+        "@angular-devkit/core": "^8.3.0",
+        "@angular-devkit/schematics": "^8.3.23",
+        "@schematics/angular": "^8.3.0"
+    },
+    "devDependencies": {
+        "@angular-devkit/schematics-cli": "^0.803.23",
+        "@types/gulp": "^4.0.5",
+        "@types/node": "^10.12.18",
+        "chalk": "^2.4.2",
+        "gulp": "^4.0.0",
+        "gulp-bump": "^3.1.1",
+        "gulp-git": "^2.9.0",
+        "ts-node": "^7.0.1",
+        "typescript": "^3.7.5",
+        "yargs": "^12.0.5"
+    }
+}

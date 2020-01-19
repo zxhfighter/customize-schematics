@@ -1,0 +1,38 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "id": "SchemanticsForGuard",
+    "title": "Guard Schema",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "路由守卫名称.",
+            "$default": {
+                "$source": "argv",
+                "index": 0
+            },
+            "x-prompt": "请输入路由守卫名称"
+        },
+        "user": {
+            "type": "string",
+            "description": "用户名.",
+            "default": "<user>"
+        },
+        "path": {
+            "type": "string",
+            "format": "path",
+            "description": "路由守卫创建所在路径.",
+            "visible": false
+        },
+        "project": {
+            "type": "string",
+            "description": "路由守卫当前所处项目.",
+            "$default": {
+                "$source": "projectName"
+            }
+        }
+    },
+    "required": [
+        "name"
+    ]
+}

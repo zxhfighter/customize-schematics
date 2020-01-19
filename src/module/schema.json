@@ -1,0 +1,65 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "id": "SchemanticsForRoute",
+    "title": "Route Schema",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "路由名称.",
+            "$default": {
+                "$source": "argv",
+                "index": 0
+            },
+            "x-prompt": "请输入路由名称?"
+        },
+        "user": {
+            "type": "string",
+            "description": "用户名.",
+            "default": "<user>"
+        },
+        "path": {
+            "type": "string",
+            "format": "path",
+            "description": "路由创建所在路径.",
+            "visible": false
+        },
+        "project": {
+            "type": "string",
+            "description": "路由当前所处项目.",
+            "$default": {
+                "$source": "projectName"
+            }
+        },
+        "flat": {
+            "type": "boolean",
+            "description": "When true, creates the new files at the top level of the current project.",
+            "default": false
+        },
+        "routing": {
+            "type": "boolean",
+            "description": "When true, creates a routing module.",
+            "default": false
+        },
+        "routingScope": {
+            "enum": ["Child", "Root"],
+            "type": "string",
+            "description": "The scope for the new routing module.",
+            "default": "Child"
+        },
+        "commonModule": {
+            "type": "boolean",
+            "description": "When true, the new NgModule imports \"CommonModule\". ",
+            "default": true,
+            "visible": false
+        },
+        "skipImport": {
+            "type": "boolean",
+            "description": "When true, does not import this component into the owning NgModule.",
+            "default": false
+        }
+    },
+    "required": [
+        "name"
+    ]
+}

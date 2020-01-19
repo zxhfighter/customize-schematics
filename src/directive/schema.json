@@ -1,0 +1,43 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "id": "SchemanticsForDirective",
+    "title": "Directive Schema",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "指令名称.",
+            "$default": {
+                "$source": "argv",
+                "index": 0
+            },
+            "x-prompt": "请输入指令名称"
+        },
+        "user": {
+            "type": "string",
+            "description": "用户名.",
+            "default": "<user>"
+        },
+        "path": {
+            "type": "string",
+            "format": "path",
+            "description": "指令创建所在路径.",
+            "visible": false
+        },
+        "project": {
+            "type": "string",
+            "description": "指令当前所处项目.",
+            "$default": {
+                "$source": "projectName"
+            }
+        },
+        "skipImport": {
+            "type": "boolean",
+            "description": "When true, does not import this component into the owning NgModule.",
+            "default": false
+        }
+    },
+    "required": [
+        "name"
+    ]
+}

@@ -1,0 +1,53 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "id": "SchemanticsForComponent",
+    "title": "Component Schema",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "组件名称.",
+            "$default": {
+                "$source": "argv",
+                "index": 0
+            },
+            "x-prompt": "请输入组件名称:"
+        },
+        "user": {
+            "type": "string",
+            "description": "组件作者.",
+            "default": "<user>"
+        },
+        "prefix": {
+            "type": "string",
+            "description": "前缀.",
+            "default": "app"
+        },
+        "path": {
+            "type": "string",
+            "format": "path",
+            "description": "组件创建所在路径，相对当前路径",
+            "visible": false
+        },
+        "project": {
+            "type": "string",
+            "description": "组件当前所处项目.",
+            "$default": {
+                "$source": "projectName"
+            }
+        },
+        "flat": {
+            "type": "boolean",
+            "description": "组件是否打平，默认不打平，也即新建文件夹。",
+            "default": false
+        },
+        "skipImport": {
+            "type": "boolean",
+            "description": "是否不加入最近的模块，默认加入。",
+            "default": false
+        }
+    },
+    "required": [
+        "name"
+    ]
+}

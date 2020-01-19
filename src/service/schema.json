@@ -1,0 +1,38 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "id": "SchemanticsForService",
+    "title": "Service Schema",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "服务名称.",
+            "$default": {
+                "$source": "argv",
+                "index": 0
+            },
+            "x-prompt": "请输入服务名称"
+        },
+        "user": {
+            "type": "string",
+            "description": "用户名.",
+            "default": "<user>"
+        },
+        "path": {
+            "type": "string",
+            "format": "path",
+            "description": "服务创建所在路径.",
+            "visible": false
+        },
+        "project": {
+            "type": "string",
+            "description": "服务当前所处项目.",
+            "$default": {
+                "$source": "projectName"
+            }
+        }
+    },
+    "required": [
+        "name"
+    ]
+}

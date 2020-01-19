@@ -1,0 +1,53 @@
+{
+    "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+    "schematics": {
+        "module": {
+            "aliases": [ "m" ],
+            "description": "模板生成器",
+            "factory": "./module/index",
+            "schema": "./module/schema.json"
+        },
+        "component": {
+            "aliases": [ "c" ],
+            "description": "组件生成器",
+            "factory": "./component/index",
+            "schema": "./component/schema.json"
+        },
+        "service": {
+            "aliases": [ "s" ],
+            "description": "服务生成器",
+            "factory": "./service/index",
+            "schema": "./service/schema.json"
+        },
+        "directive": {
+            "aliases": [ "d" ],
+            "description": "指令生成器",
+            "factory": "./directive/index",
+            "schema": "./directive/schema.json"
+        },
+        "pipe": {
+            "aliases": [ "p" ],
+            "description": "管道生成器",
+            "factory": "./pipe/index",
+            "schema": "./pipe/schema.json"
+        },
+        "guard": {
+            "aliases": [ "g" ],
+            "description": "路由守卫生成器",
+            "factory": "./guard/index",
+            "schema": "./guard/schema.json"
+        },
+        "business": {
+            "aliases": [ "b" ],
+            "description": "业务模块生成器",
+            "factory": "./business/index",
+            "schema": "./business/schema.json"
+        },
+        "node-app": {
+            "aliases": [ "node" ],
+            "description": "Node 应用生成，使用 Typescript",
+            "factory": "./node-app/index",
+            "schema": "./node-app/schema.json"
+        }
+    }
+}
